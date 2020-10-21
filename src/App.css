@@ -1,0 +1,24 @@
+@import '~antd/dist/antd.css';
+.header {
+    background-color: white;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#title {
+    margin: 0 0 8px 8px;
+    font-family: 'Red Rose', cursive;
+}
+
+.content {
+    margin-top: 64px;
+    padding: 25px 50px;
+    background-color: transparent;
+    text-align: center;
+}
