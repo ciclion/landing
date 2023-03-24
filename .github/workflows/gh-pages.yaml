@@ -11,7 +11,9 @@ jobs:
     - uses: actions/checkout@v3
     - run : yarn install
       shell: bash
-    - run : react-scripts --openssl-legacy-provider build
+    - run : yarn run build --openssl-legacy-provider
+      shell: bash
+    - run : react-scripts build
       shell: bash
     - run : git config user.name github-actions
       shell: bash
