@@ -16,8 +16,6 @@ jobs:
       shell: bash
     - run : yarn run build
       shell: bash
-    - run : react-scripts build
-      shell: bash
     - run : git config user.name github-actions
       shell: bash
     - run : git config user.email github-actions@github.com
