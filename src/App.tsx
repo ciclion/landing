@@ -20,6 +20,29 @@ function App() {
       'Desenvolupament d\'apps per a dispositius mòbils'
   ];
 
+  const services = [
+    [
+        {
+            title:"Desenvolupament Web",
+            description: "Creem des de 0 les pàgines web més avançades amb els frameworks més moderns (Angular i React)"
+        },
+        {
+            title: "Desenvolupament d'Apps Mòbils",
+            description: "Desenvolupem aplicacions/frameworks natius per iOS i Android i també fem apps híbrides amb Ionic"
+        }
+    ],
+    [
+        {
+            title: "Arquitectura de Solucions al Núvol",
+            description:"Dissenyem sistemes complexos al núvol: bases de dades, servidors, clusters d'aplicacions containeritzades, etc..."
+        },
+        {
+            title: "Disseny de Sistemes IoT",
+            description: "Des d'una pulsera BLE a un VPN desplegat en una Raspberry Pi, ens encanten els projectes de IoT i l'electrònica en general"
+        }
+    ]
+  ];
+
   return (
     <Layout>
         <Header className="header">
@@ -33,38 +56,19 @@ function App() {
                     <h3 key={topic} style={{marginTop: '5px'}}>{topic}</h3>
                 )}
             </Carousel>
-            <Row>
-                <Col span={12}>
-                    <Card>
-                        <Card.Meta
-                            title="Desenvolupament Web"
-                            description="Creem des de 0 les pàgines web més avançades amb els frameworks més moderns (Angular i React)" />
-                    </Card>
-                </Col>
-                <Col span={12}>
-                    <Card>
-                        <Card.Meta
-                            title="Desenvolupament d'Apps Mòbils"
-                            description="Desenvolupem aplicacions/frameworks natius per iOS i Android i també fem apps híbrides amb Ionic" />
-                    </Card>
-                </Col>
-            </Row>
-            <Row>
-                <Col span={12}>
-                    <Card>
-                        <Card.Meta
-                            title="Arquitectura de Solucions al Núvol"
-                            description="Dissenyem sistemes complexos al núvol: bases de dades, servidors, clusters d'aplicacions containeritzades, etc..." />
-                    </Card>
-                </Col>
-                <Col span={12}>
-                    <Card>
-                        <Card.Meta
-                            title="Disseny de Sistemes IoT"
-                            description="Des d'una pulsera BLE a un NAS fet amb una Raspberry Pi, ens encanten els projectes de IoT i l'electrònica en general" />
-                    </Card>
-                </Col>
-            </Row>
+            {services.map((row, ri) =>
+                <Row id={ri.toString()}>
+                    {row.map((service, si) => 
+                        <Col span={12} id={si.toString()}>
+                            <Card>
+                                <Card.Meta
+                                    title={service.title}
+                                    description={service.description}/>
+                            </Card>
+                        </Col>    
+                    )}
+                </Row>
+            )}
         </Content>
         <Footer>
             <Paragraph>
@@ -77,7 +81,7 @@ function App() {
                 <a href="https://twitter.com/_ciclion" rel="noopener noreferrer" target="_blank">@_ciclion</a>
             </Tag>
             <Tag icon={<GithubOutlined />} color="black">
-                <a href="https://github.com/ciclion" rel="noopener noreferrer" target="_blank">/ciclion</a>
+                <a href="https://github.com/ciclion" rel="noopener noreferrer" target="_blank">@ciclion</a>
             </Tag>
         </Footer>
     </Layout>
